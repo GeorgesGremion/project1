@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Aktivität für {{ child.first_name }} {{ child.last_name }} hinzufügen</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="mt-4">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }}" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <form method="POST" class="mt-4">
+        {{ form.hidden_tag() }}
+
+        <h3>Schlaf</h3>
+        <div class="mb-3">
+            {{ form.sleep_start_button(class="btn btn-primary") }}
+            {{ form.sleep_end_button(class="btn btn-secondary") }}
+        </div>
+
+        <h3>Essen</h3>
+        <div class="mb-3">
+            {{ wtf.form_field(form.food_choices) }}
+        </div>
+        <div class="mb-3">
+            {{ wtf.form_field(form.other_food) }}
+        </div>
+        <button type="submit" class="btn btn-success">Essen hinzufügen</button>
+
+
+        <h3>Windeln</h3>
+        <div class="mb-3">
+            {{ wtf.form_field(form.change_type) }}
+        </div>
+
+        <button type="submit" class="btn btn-success">Windelwechsel hinzufügen</button>
+    </form>
+</div>
+{% endblock %}

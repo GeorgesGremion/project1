@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-4">Benutzerübersicht</h1>
+
+  <table class="table table-hover mt-4">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Benutzername</th>
+        <th>Email</th>
+        <th>Gruppe</th>
+        <th>Aktionen</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <form method="post">
+            {% with form=group_forms[user.id] %}
+            {{ form.hidden_tag() }}
+            {{ form.user_id(value=user.id) }}
+            {{ form.new_group(value=user.group) }}
+            <input type="submit" value="Aktualisieren" class="btn btn-sm btn-primary">
+            {% endwith %}
+          </form>
+        </td>
+        <td>
+          {% if user.group %}
+          <a href="{{ url_for('group_children', group_name=user.group) }}" class="btn btn-sm btn-info">Kinder
+            anzeigen</a>
+          {% else %}
+          <span>Keine Gruppe zugewiesen</span>
+          {% endif %}
+
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

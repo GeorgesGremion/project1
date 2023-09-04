@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<div class="container">
+    <h1>Löschen bestätigen</h1>
+    <p>Sind Sie sicher, dass Sie das Kind {{ child.first_name }} {{ child.last_name }} löschen möchten?</p>
+
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.confirmation.label }}
+            {{ form.confirmation(class="form-control") }}
+        </div>
+        <button type="submit" class="btn btn-danger">Löschen</button>
+    </form>
+</div>
+{% endblock %}

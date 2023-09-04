@@ -1,0 +1,85 @@
+2023-08-26 15:31:41,262 ERROR: Exception on / [GET] [in C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\routes.py", line 35, in index
+    return render_template('index.html', title='Home', form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 737, in update_template_context
+    context.update(func())
+                   ^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask_login\utils.py", line 407, in _user_context_processor
+    return dict(current_user=_get_user())
+                             ^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask_login\utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\models.py", line 119, in load_user
+    return User.query.get(int(id))
+           ^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask_sqlalchemy\model.py", line 30, in __get__
+    return cls.query_class(
+           ^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4215, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[DiaperChange(diaper_change)]'. Original exception was: Mapper 'Mapper[Child(child)]' has no property 'diaper_changes'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2023-08-26 15:42:40,493 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 15:45:53,550 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 15:55:46,156 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 15:55:58,909 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 15:56:07,679 ERROR: Exception on /add_activity/4 [GET] [in C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\routes.py", line 270, in add_activity
+    form.food.data = child.food
+                     ^^^^^^^^^^
+AttributeError: 'Child' object has no attribute 'food'

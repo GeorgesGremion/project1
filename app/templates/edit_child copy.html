@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kind bearbeiten</title>
+</head>
+<body>
+    <h1>Kind bearbeiten</h1>
+    <h2>Kind ID: {{ child.id }}</h2>
+    <h3>Informationen:</h3>
+    <p>Vorname: {{ child.first_name }}</p>
+    <p>Nachname: {{ child.last_name }}</p>
+    <p>Alter: {{ child.age }}</p>
+    <p>Gruppe: {{ child.group }}</p>
+
+    <h3>Schlaf:</h3>
+    {% if child.sleep_start %}
+        {% if child.sleep_end %}
+            <p>Schlafzeit: {{ child.sleep_start }} bis {{ child.sleep_end }}</p>
+        {% else %}
+            <p>Schlafzeit: {{ child.sleep_start }} (noch nicht aufgewacht)</p>
+        {% endif %}
+    {% else %}
+        <p>Kind schläft noch nicht</p>
+    {% endif %}
+    <form method="POST" action="{{ url_for('edit_child', child_id=child.id) }}">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        <button type="submit" name="sleep">Kind schläft ein</button>
+        <button type="submit" name="wake_up">Kind wacht auf</button>
+    </form>
+
+    <h3>Essen:</h3>
+    {% if child.food %}
+        <p>{{ child.food }} um {{ child.sleep_start }}</p>
+    {% endif %}
+    <form method="POST" action="{{ url_for('edit_child', child_id=child.id) }}">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        <button type="submit" name="food" value="Apfel">Apfel</button>
+        <button type="submit" name="food" value="Birne">Birne</button>
+    </form>
+
+    <h3>Aktivitäten:</h3>
+    <form method="POST" action="{{ url_for('edit_child', child_id=child.id) }}">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        <input type="text" name="activity">
+        <button type="submit">Akt

@@ -1,0 +1,132 @@
+2023-08-26 15:57:06,110 ERROR: Exception on /day_review/1 [GET] [in C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\engine\default.py", line 920, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: activity.food
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\routes.py", line 283, in day_review
+    ).all()
+      ^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\query.py", line 2688, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\query.py", line 2842, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\session.py", line 2231, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\session.py", line 2126, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\context.py", line 292, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+           ^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1841, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\engine\default.py", line 920, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: activity.food
+[SQL: SELECT activity.id AS activity_id, activity.child_id AS activity_child_id, activity.food AS activity_food, activity.sleep_start AS activity_sleep_start, activity.sleep_end AS activity_sleep_end, activity.d_change AS activity_d_change, activity.timestamp AS activity_timestamp 
+FROM activity 
+WHERE activity.child_id = ? AND activity.timestamp >= ? AND activity.timestamp < ?]
+[parameters: (1, '2023-08-26', '2023-08-27')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-08-26 15:57:11,373 ERROR: Exception on /add_activity/1 [GET] [in C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\routes.py", line 270, in add_activity
+    form.food.data = child.food
+                     ^^^^^^^^^^
+AttributeError: 'Child' object has no attribute 'food'
+2023-08-26 16:02:37,601 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:02:40,425 ERROR: Exception on /add_activity/1 [GET] [in C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\routes.py", line 270, in add_activity
+    form.food.data = child.food
+                     ^^^^^^^^^^
+AttributeError: 'Child' object has no attribute 'food'
+2023-08-26 16:08:26,494 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:08:27,216 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:12:44,200 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:12:46,154 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:13:22,734 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:13:29,520 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:13:42,297 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:13:42,960 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:15:27,709 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:15:44,596 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:15:49,835 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:16:07,313 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:16:08,008 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:17:43,642 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:20:06,824 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:24:56,224 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:33:52,103 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:33:52,768 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 16:35:20,136 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]

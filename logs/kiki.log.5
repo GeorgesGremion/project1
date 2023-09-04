@@ -1,0 +1,79 @@
+2023-08-25 22:26:22,853 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 22:26:23,932 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 22:29:57,082 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 22:30:24,810 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 22:34:18,448 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 22:34:45,434 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 22:35:08,144 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 22:35:45,269 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 22:43:27,553 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 22:43:30,256 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 22:45:36,232 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 23:01:20,529 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 23:54:54,397 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 15:11:08,550 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 15:29:32,288 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 15:29:39,254 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 15:31:09,954 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-26 15:31:13,067 ERROR: Exception on /children [GET] [in C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2479, in get_property
+    return self._props[key]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'diaper_changes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\routes.py", line 68, in children
+    children = Child.query.all()
+               ^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask_sqlalchemy\model.py", line 30, in __get__
+    return cls.query_class(
+           ^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\query.py", line 282, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 406, in expect
+    insp._post_inspect
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\interfaces.py", line 549, in init
+    self.do_init()
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 1637, in do_init
+    self._generate_backref()
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 2128, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\relationships.py", line 1569, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\sqlalchemy\orm\mapper.py", line 2481, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[Child(child)]' has no property 'diaper_changes'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.

@@ -1,0 +1,125 @@
+2023-08-22 20:14:21,577 ERROR: Exception on /edit_child/10 [GET] [in C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\routes.py", line 119, in edit_child
+    return render_template('edit_child.html', form=form, child=child)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\templates\edit_child.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateRuntimeError: extended multiple times
+2023-08-22 20:14:42,915 ERROR: Exception on /edit_child/9 [GET] [in C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\routes.py", line 119, in edit_child
+    return render_template('edit_child.html', form=form, child=child)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\templates\edit_child.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateRuntimeError: extended multiple times
+2023-08-22 20:15:50,481 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:15:55,507 ERROR: Exception on /edit_child/9 [GET] [in C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\routes.py", line 119, in edit_child
+    return render_template('edit_child.html', form=form, child=child)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\GremDrive\IFA\DB_Python\Flask\geoenv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\GremDrive\IFA\DB_Python\Flask\project1\app\templates\edit_child.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateRuntimeError: extended multiple times
+2023-08-22 20:16:55,670 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:16:56,332 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:17:48,502 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:17:49,160 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:19:57,250 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:19:59,284 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:20:13,782 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:20:33,231 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:20:58,769 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:21:21,268 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:21:47,790 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:21:59,029 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:22:13,250 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:22:13,885 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:22:56,874 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:22:58,870 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-22 20:23:46,123 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 20:56:46,671 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 20:56:47,427 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:00:27,261 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:02:30,265 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:03:53,829 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:03:55,695 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:05:44,581 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:06:34,218 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:06:47,595 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:09:16,081 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:09:44,937 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:10:32,587 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:43:06,516 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
+2023-08-25 21:43:14,714 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]

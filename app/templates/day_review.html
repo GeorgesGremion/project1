@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Tagesrückblick für {{ child.first_name }} {{ child.last_name }}</h1>
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Zeitstempel</th>
+                <th>Aktivität</th>
+                <th>Essen</th>
+                <th>Windel Gross</th>
+                <th>Windel Klein</th>
+                <th>Schlaf Start</th>
+                <th>Schlaf Ende</th>
+                <th>Schlaf total (Stunden)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for activity in activities %}
+            <tr>
+                <td>{{ activity.timestamp.strftime('%H:%M') }}</td>
+                <td>{{ activity.description }}</td>
+                <td>{{ activity.food }}</td>
+                <td>{{ activity.diaper_change_large.strftime('%H:%M') if activity.diaper_change_large else '' }}</td>
+                <td>{{ activity.diaper_change_small.strftime('%H:%M') if activity.diaper_change_small else '' }}</td>
+                <td>{{ activity.sleep_start.strftime('%H:%M') if activity.sleep_start else '' }}</td>
+                <td>{{ activity.sleep_end.strftime('%H:%M') if activity.sleep_end else '' }}</td>
+                <td>
+                    {% if activity.sleep_start and activity.sleep_end %}
+                    {{ (activity.sleep_end - activity.sleep_start).seconds // 3600 }}:{{ (activity.sleep_end -
+                    activity.sleep_start).seconds % 3600 // 60 }}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
