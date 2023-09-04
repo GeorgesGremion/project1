@@ -1,21 +1,40 @@
-FROM ubuntu:20.04
+# Verwenden Sie das offizielle Ubuntu-Image als Basis
+FROM ubuntu:latest
 
-ENV DEBIAN_FRONTEND=noninteractive
+# Setze den Maintainer des Images
+LABEL maintainer="Ihr Name <ihre-email@example.com>"
 
-RUN apt update && apt install -y python3 python3-venv python3-dev mysql-server postfix mailutils supervisor nginx git openssl
+# Aktualisieren Sie die Paketlisten und installieren Sie die erforderlichen Pakete
+RUN apt-get update -y && apt-get install -y \
+    nginx \
+    python3 \
+    python3-venv \
+    python3-dev \
+    supervisor \
+    git
 
-COPY . /app
+# Erstellen Sie das Verzeichnis für Ihre Anwendung
 WORKDIR /app
 
-ENV FLASK_APP=kiki.py
+COPY . /app
+COPY kiki-supervisor.conf /etc/supervisor/conf.d/
+COPY kiki-nginx.conf /etc/nginx/sites-available/default
 
 RUN python3 -m venv venv
-RUN . venv/bin/activate && pip install -r requirements.txt && pip install gunicorn pymysql cryptography
 
-# Hier können Sie weitere Konfigurationsschritte für Postfix, MySQL usw. hinzufügen ...
+RUN /app/venv/bin/pip3 install -r requirements.txt
 
-# Exponieren Sie den gewünschten Port (z. B. 80 für HTTP und 443 für HTTPS)
-EXPOSE 80 443
+ENV FLASK_APP kiki.py
 
-# Starten Sie Ihre Anwendung (dies kann durch ein Startskript oder direkt hier erfolgen)
+RUN /app/venv/bin/flask db init
+
+RUN /app/venv/bin/flask db migrate
+
+RUN /app/venv/bin/flask db upgrade
+
+
+# Hier können Sie weitere Befehle hinzufügen, um Ihre Anwendung zu konfigurieren, 
+# z.B. das Kopieren von Konfigurationsdateien für Nginx oder Supervisor.
+
+# Startbefehl, wenn der Container läuft (ändern Sie dies entsprechend Ihrer Anforderungen)
 CMD ["nginx", "-g", "daemon off;"]
