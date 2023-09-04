@@ -20,10 +20,4 @@ COPY . /app
 COPY kiki-supervisor.conf /etc/supervisor/conf.d/
 COPY kiki-nginx.conf /etc/nginx/sites-available/default
 
-RUN python3 -m venv venv
-
-RUN /app/venv/bin/pip3 install -r requirements.txt
-
-ENV FLASK_APP /app/kiki.py
-
 CMD ["/app/start.sh"]
