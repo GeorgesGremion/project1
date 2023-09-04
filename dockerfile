@@ -15,6 +15,7 @@ RUN apt-get update -y && apt-get install -y \
 
 # Erstellen Sie das Verzeichnis für Ihre Anwendung
 WORKDIR /app
+COPY . /app
 
 COPY kiki-supervisor.conf /etc/supervisor/conf.d/
 COPY kiki-nginx.conf /etc/nginx/sites-available/default
@@ -23,7 +24,7 @@ RUN python3 -m venv venv
 
 RUN /app/venv/bin/pip3 install -r requirements.txt
 
-ENV FLASK_APP kiki.py
+ENV FLASK_APP /app/kiki.py
 
 RUN /app/venv/bin/flask db init
 
