@@ -12,7 +12,7 @@ services:
       - ./app:/app
     environment:
       FLASK_ENV: development
-      FLASK_APP: app.py
+      FLASK_APP: kiki.py
       MYSQL_HOST: mysql
       MYSQL_PORT: 3306
       MYSQL_USER: flask_app_user
@@ -41,7 +41,7 @@ services:
       PMA_USER: root
       PMA_PASSWORD: root_password
     ports:
-      - 8080:80
+      - 8081:80
     networks:
       - my-network
 
