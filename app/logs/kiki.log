@@ -39,3 +39,8 @@
 2023-09-04 21:27:42,901 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\__init__.py:49]
 2023-09-04 21:47:10,648 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\kitapp\app\__init__.py:49]
 2023-09-04 21:47:11,501 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\kitapp\app\__init__.py:49]
+2023-09-04 22:36:03,442 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\app\__init__.py:49]
+2023-09-04 22:36:03,511 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\kiki.py:55]
+2023-09-04 22:36:04,270 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\app\__init__.py:49]
+2023-09-04 22:36:04,334 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\kiki.py:55]
+2023-09-04 22:36:57,027 INFO: Kiki startup [in C:\GremDrive\IFA\DB_Python\Flask\project1\app\app\__init__.py:49]
