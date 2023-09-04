@@ -1,0 +1,49 @@
+version: "3"
+services:
+  app:
+    image: app
+    build:
+      context: .
+    ports:
+      - 5000:5000
+    networks:
+      - my-network
+    volumes:
+      - ./app:/app
+    environment:
+      FLASK_ENV: development
+      FLASK_APP: app.py
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: flask_app_user
+      MYSQL_PASSWORD: flask_app_password
+      MYSQL_DB: flask_app_db
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: flask_app_db
+      MYSQL_USER: flask_app_user
+      MYSQL_PASSWORD: flask_app_password
+    networks:
+      - my-network
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root_password
+    ports:
+      - 8080:80
+    networks:
+      - my-network
+
+networks:
+  my-network:
