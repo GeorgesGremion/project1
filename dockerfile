@@ -26,5 +26,4 @@ RUN /app/venv/bin/pip3 install -r requirements.txt
 
 ENV FLASK_APP /app/kiki.py
 
-COPY start.sh /app/start.sh
-CMD ["chmod +x /app/start.sh", "/app/start.sh"]
+CMD ["/app/start.sh"]

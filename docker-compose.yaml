@@ -9,7 +9,7 @@ services:
     networks:
       - my-network
     volumes:
-      - ./app:/app
+      - ./:/app
     environment:
       FLASK_ENV: development
       FLASK_APP: kiki.py
