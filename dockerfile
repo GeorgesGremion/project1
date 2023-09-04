@@ -1,16 +1,21 @@
+FROM ubuntu:20.04
 
-FROM python:3.8-slim-buster
+ENV DEBIAN_FRONTEND=noninteractive
 
-WORKDIR /app
+RUN apt update && apt install -y python3 python3-venv python3-dev mysql-server postfix mailutils supervisor nginx git openssl
 
 COPY . /app
+WORKDIR /app
 
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+ENV FLASK_APP=kiki.py
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV FLASK_APP kiki.py
-ENV FLASK_RUN_HOST 0.0.0.0
+RUN python3 -m venv venv
+RUN . venv/bin/activate && pip install -r requirements.txt && pip install gunicorn pymysql cryptography
 
-EXPOSE 5000
+# Hier können Sie weitere Konfigurationsschritte für Postfix, MySQL usw. hinzufügen ...
 
-CMD ["flask", "run"]
+# Exponieren Sie den gewünschten Port (z. B. 80 für HTTP und 443 für HTTPS)
+EXPOSE 80 443
+
+# Starten Sie Ihre Anwendung (dies kann durch ein Startskript oder direkt hier erfolgen)
+CMD ["nginx", "-g", "daemon off;"]
