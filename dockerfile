@@ -26,15 +26,5 @@ RUN /app/venv/bin/pip3 install -r requirements.txt
 
 ENV FLASK_APP /app/kiki.py
 
-RUN /app/venv/bin/flask db init
-
-RUN /app/venv/bin/flask db migrate
-
-RUN /app/venv/bin/flask db upgrade
-
-
-# Hier können Sie weitere Befehle hinzufügen, um Ihre Anwendung zu konfigurieren, 
-# z.B. das Kopieren von Konfigurationsdateien für Nginx oder Supervisor.
-
-# Startbefehl, wenn der Container läuft (ändern Sie dies entsprechend Ihrer Anforderungen)
-CMD ["nginx", "-g", "daemon off;"]
+COPY start.sh /app/start.sh
+CMD ["chmod +x /app/start.sh", "/app/start.sh"]
