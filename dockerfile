@@ -16,7 +16,6 @@ RUN apt-get update -y && apt-get install -y \
 # Erstellen Sie das Verzeichnis für Ihre Anwendung
 WORKDIR /app
 
-COPY . /app
 COPY kiki-supervisor.conf /etc/supervisor/conf.d/
 COPY kiki-nginx.conf /etc/nginx/sites-available/default
 

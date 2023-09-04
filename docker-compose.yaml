@@ -5,7 +5,7 @@ services:
     build:
       context: .
     ports:
-      - 5000:5000
+      - 8000:8321
     networks:
       - my-network
     volumes:
@@ -15,8 +15,8 @@ services:
       FLASK_APP: kiki.py
       MYSQL_HOST: mysql
       MYSQL_PORT: 3306
-      MYSQL_USER: flask_app_user
-      MYSQL_PASSWORD: flask_app_password
+      MYSQL_USER: project1
+      MYSQL_PASSWORD: SuperSicher
       MYSQL_DB: flask_app_db
     depends_on:
       - mysql
@@ -24,10 +24,10 @@ services:
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: flask_app_db
-      MYSQL_USER: flask_app_user
-      MYSQL_PASSWORD: flask_app_password
+      MYSQL_ROOT_PASSWORD: root_SuperSicher
+      MYSQL_DATABASE: project1
+      MYSQL_USER: project1
+      MYSQL_PASSWORD: SuperSicher
     networks:
       - my-network
     volumes:
