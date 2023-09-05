@@ -22,7 +22,7 @@ docker compose up -d
 docker exec -it project1-app-1 bash
 ./start.sh
 
-        Nun sind ist ein Container für die Kita APP, für die DB (MySQL) und ein PHPMyAdmin erstellt.
+Nun sind ist ein Container für die Kita APP, für die DB (MySQL) und ein PHPMyAdmin erstellt.
 
 Erstellen via Docker Hub (EMPFOHLEN):
 docker compose -f compose_dockerhub.yaml up -d
