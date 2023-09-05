@@ -1,7 +1,10 @@
+# Verwenden Sie das offizielle Ubuntu-Image als Basis
 FROM ubuntu:latest
 
-LABEL maintainer="Georges Gremion <georges@gremion.ch>"
+# Setze den Maintainer des Images
+LABEL maintainer="Ihr Name <ihre-email@example.com>"
 
+# Aktualisieren Sie die Paketlisten und installieren Sie die erforderlichen Pakete
 RUN apt-get update -y && apt-get install -y \
     nginx \
     python3 \
@@ -10,8 +13,12 @@ RUN apt-get update -y && apt-get install -y \
     supervisor \
     git
 
+# Erstellen Sie das Verzeichnis für Ihre Anwendung
 WORKDIR /app
 COPY . /app
-RUN chmod +x /app/start.sh
+
 COPY kiki-supervisor.conf /etc/supervisor/conf.d/
 COPY kiki-nginx.conf /etc/nginx/sites-available/default
+
+
+CMD ["/app/start.sh"]
