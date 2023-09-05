@@ -17,7 +17,7 @@ COPY kiki-supervisor.conf /etc/supervisor/conf.d/
 COPY kiki-nginx.conf /etc/nginx/sites-available/default
 
 WORKDIR /bin
-COPY start.ch /bin/start.sh
+COPY start.sh /bin/start.sh
 RUN chmod +x /bin/start.sh
 
 CMD ["/bin/start.sh"]
