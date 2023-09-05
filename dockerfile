@@ -1,10 +1,7 @@
-# Verwenden Sie das offizielle Ubuntu-Image als Basis
 FROM ubuntu:latest
 
-# Setze den Maintainer des Images
 LABEL maintainer="Georges Gremion <georges@gremion.ch>"
 
-# Aktualisieren Sie die Paketlisten und installieren Sie die erforderlichen Pakete
 RUN apt-get update -y && apt-get install -y \
     nginx \
     python3 \
@@ -13,7 +10,6 @@ RUN apt-get update -y && apt-get install -y \
     supervisor \
     git
 
-# Erstellen Sie das Verzeichnis für Ihre Anwendung
 WORKDIR /app
 COPY . /app
 
