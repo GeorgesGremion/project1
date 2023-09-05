@@ -15,5 +15,3 @@ COPY . /app
 RUN chmod +x /app/start.sh
 COPY kiki-supervisor.conf /etc/supervisor/conf.d/
 COPY kiki-nginx.conf /etc/nginx/sites-available/default
-
-CMD ["/bin/start.sh"]
