@@ -4,7 +4,6 @@ from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, \
     Length
 from app.models import User
 
-
 class LoginForm(FlaskForm):
     username = StringField('Benutzername', validators=[DataRequired()])
     password = PasswordField('Passwort', validators=[DataRequired()])
@@ -16,10 +15,6 @@ class ChildForm(FlaskForm):
     last_name = StringField('Nachname', validators=[DataRequired()])
     age = IntegerField('Alter', validators=[DataRequired()])
     group = SelectField('Gruppe', choices=[('A', 'A'), ('B', 'B'), ('C', 'C')], validators=[DataRequired()])
-    # sleep_start = StringField('Schlafbeginn')
-    # sleep_end = StringField('Schlafende')
-    # food = SelectField('Essen', choices=[('Apfel', 'Apfel'), ('Birne', 'Birne')])
-    # activities = StringField('Aktivitäten')
     submit = SubmitField('Speichern')
 
 class EditChildForm(FlaskForm):
@@ -27,13 +22,7 @@ class EditChildForm(FlaskForm):
     last_name = StringField('Nachname', validators=[DataRequired()])
     age = IntegerField('Alter', validators=[DataRequired()])
     group = SelectField('Gruppe', choices=[('A', 'A'), ('B', 'B'), ('C', 'C')], validators=[DataRequired()])
-    # sleep_start = DateTimeField('Schlafbeginn')
-    # sleep_end = DateTimeField('Schlafende')
-    # food = SelectField('Essen', choices=[('Apfel', 'Apfel'), ('Birne', 'Birne')])
-    # activities = StringField('Aktivitäten')
     submit = SubmitField('Speichern')
-    # change_type = RadioField('Windeltyp', choices=[('gross', 'Windel gewechselt groß'), ('klein', 'Windel gewechselt klein')])
-    # submit_change = SubmitField('Windelwechsel bestätigen')
 
     def __init__(self, *args, **kwargs):
         super(EditChildForm, self).__init__(*args, **kwargs)
@@ -51,21 +40,14 @@ class DeleteChildForm(FlaskForm):
             raise ValidationError('Du musst bestätigen, dass du das Kind wirklich löschen möchtest.')
         
 class AddActivityForm(FlaskForm):
-    # Schlaf
     sleep_start_button = SubmitField('Schlaf Start')
     sleep_end_button = SubmitField('Schlaf Ende')
-    
-    # Essen
     food_choices = RadioField('Essen', choices=[('Apfel', 'Apfel'), ('Birne', 'Birne'), ('Andere', 'Andere')])
-    other_food = StringField('Anderes Essen')  # Dieses Feld erscheint, wenn "Andere" ausgewählt ist
-    
-    # Windeln
+    other_food = StringField('Anderes Essen') 
     change_type = RadioField('Windelwechsel', choices=[('gross', 'Windel Gross'), ('klein', 'Windel Klein')])
-
     submit = SubmitField('Erfassen')
 
 class PostForm(FlaskForm):
-    # post = TextAreaField('Bitte melden Sie sich an', validators=[DataRequired()])
     login = SubmitField('Anmelden')
 
 class RegistrationForm(FlaskForm):
@@ -99,7 +81,7 @@ class EditProfileForm(FlaskForm):
             
 class AssignGroupForm(FlaskForm):
     new_group = SelectField('Gruppe', choices=[('A', 'A'), ('B', 'B'), ('C', 'C')])
-    user_id = HiddenField()  # To keep track of which user we're updating
+    user_id = HiddenField()
     submit = SubmitField('Gruppe zuweisen')
 
 

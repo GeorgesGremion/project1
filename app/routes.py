@@ -7,6 +7,12 @@ from app.models import User
 from app.models import Child, Activity
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
+from app.api import get_user_children
+
+@app.route('/api/user_children', methods=['GET'])
+@login_required
+def api_user_children():
+    return get_user_children()
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
