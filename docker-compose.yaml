@@ -5,7 +5,7 @@ services:
     build:
       context: .
     ports:
-      - 8321:8000
+      - 8000:8000
     networks:
       - my-network
     volumes:
@@ -39,7 +39,7 @@ services:
       PMA_HOST: mysql
       PMA_PORT: 3306
       PMA_USER: root
-      PMA_PASSWORD: root_password
+      PMA_PASSWORD: root_SuperSicher
     ports:
       - 8081:80
     networks:
