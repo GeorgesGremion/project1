@@ -29,8 +29,6 @@ services:
       MYSQL_PASSWORD: SuperSicher
     networks:
       - my-network
-    volumes:
-      - ./mysql:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
