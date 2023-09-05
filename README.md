@@ -29,6 +29,11 @@ Erstellen via Docker Hub (EMPFOHLEN):
 
         docker compose -f compose_dockerhub.yaml up -d
 
+Die Container sind öffentlich unter Docker Hub zu finden:
+
+        https://hub.docker.com/repository/docker/gjoker86/project1_app
+        https://hub.docker.com/repository/docker/gjoker86/project1_mysql/general
+
 Beispieldaten Importieren (beide Varianten):
 
         ./install_sampledata.sh
