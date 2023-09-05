@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 15
+
 if [ ! -f /app/.initialized ]; then
     python3 -m venv venv
     /app/venv/bin/flask db init
