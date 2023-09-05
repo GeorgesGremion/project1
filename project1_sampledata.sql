@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Erstellungszeit: 05. Sep 2023 um 10:01
+-- Erstellungszeit: 05. Sep 2023 um 10:23
 -- Server-Version: 8.0.34
 -- PHP-Version: 8.2.8
 
@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 -- Tabellenstruktur für Tabelle `activity`
 --
 
+DROP TABLE IF EXISTS `activity`;
 CREATE TABLE `activity` (
   `id` int NOT NULL,
   `child_id` int NOT NULL,
@@ -46,6 +47,7 @@ CREATE TABLE `activity` (
 -- Tabellenstruktur für Tabelle `alembic_version`
 --
 
+DROP TABLE IF EXISTS `alembic_version`;
 CREATE TABLE `alembic_version` (
   `version_num` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -63,6 +65,7 @@ INSERT INTO `alembic_version` (`version_num`) VALUES
 -- Tabellenstruktur für Tabelle `child`
 --
 
+DROP TABLE IF EXISTS `child`;
 CREATE TABLE `child` (
   `id` int NOT NULL,
   `first_name` varchar(50) NOT NULL,
@@ -89,6 +92,7 @@ INSERT INTO `child` (`id`, `first_name`, `last_name`, `age`, `group`) VALUES
 -- Tabellenstruktur für Tabelle `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int NOT NULL,
   `username` varchar(64) DEFAULT NULL,
