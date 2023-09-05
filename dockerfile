@@ -17,7 +17,11 @@ RUN apt-get update -y && apt-get install -y \
 WORKDIR /app
 COPY . /app
 
+COPY start.ch /bin/start.sh
+RUN chmod +x /bin/start.sh
+
+
 COPY kiki-supervisor.conf /etc/supervisor/conf.d/
 COPY kiki-nginx.conf /etc/nginx/sites-available/default
 
-CMD ["/app/start.sh"]
+CMD ["/bin/start.sh"]
