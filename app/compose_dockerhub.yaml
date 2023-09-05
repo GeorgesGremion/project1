@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+  app:
+    image: gjoker86/project1_app
+    ports:
+      - 8000:8000
+    networks:
+      - my-network
+    volumes:
+      - ./:/app
+    environment:
+      FLASK_ENV: development
+      FLASK_APP: kiki.py
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: project1
+      MYSQL_PASSWORD: SuperSicher
+      MYSQL_DB: flask_app_db
+    depends_on:
+      - mysql
+
+  mysql:
+    image: gjoker86/project1_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_SuperSicher
+      MYSQL_DATABASE: project1
+      MYSQL_USER: project1
+      MYSQL_PASSWORD: SuperSicher
+    networks:
+      - my-network
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root_SuperSicher
+    ports:
+      - 8081:80
+    networks:
+      - my-network
+
+networks:
+  my-network:
