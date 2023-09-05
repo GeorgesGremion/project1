@@ -5,7 +5,7 @@ services:
     build:
       context: .
     ports:
-      - 8000:8321
+      - 8321:8000
     networks:
       - my-network
     volumes:
