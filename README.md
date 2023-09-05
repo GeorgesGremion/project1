@@ -1,8 +1,6 @@
-# project1
+# VCID.IA1A.PA Praxisarbeit - Arbeit der IPSO Bildung
 
-Im Rahmen einer IPSO Ausbildung...
-
-Die Kita APP
+Die Kita APP von Georges Gremion
 
 # Installation
 
