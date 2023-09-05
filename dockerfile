@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 # Setze den Maintainer des Images
-LABEL maintainer="Ihr Name <ihre-email@example.com>"
+LABEL maintainer="Georges Gremion <georges@gremion.ch>"
 
 # Aktualisieren Sie die Paketlisten und installieren Sie die erforderlichen Pakete
 RUN apt-get update -y && apt-get install -y \
